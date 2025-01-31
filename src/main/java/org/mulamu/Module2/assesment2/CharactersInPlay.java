@@ -1,4 +1,4 @@
-package org.mulamu.assesment2;
+package org.mulamu.Module2.assesment2;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package org.mulamu.assesment1;
+package org.mulamu.Module2.assesment1;
 
 import java.io.IOException;
 import java.nio.file.Files;

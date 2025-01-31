@@ -1,25 +1,25 @@
-package org.mulamu;
+package org.mulamu.Module1;
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
-import java.util.regex.*;
 
-public class MostCommonWord {
+public class MostCommonWordLength {
     public static void main(String[] args) {
-        String fileName = "romeo.txt";
+        String fileName = "errors.txt";
         try {
             String content = new String(Files.readAllBytes(Paths.get(fileName)));
             String cleanedContent = content.replaceAll("[.,!?;:]", "").toLowerCase();
             String[] words = cleanedContent.split("\\s+");
             
-            Map<String, Integer> wordCount = new HashMap<>();
+            Map<Integer, Integer> lengthCount = new HashMap<>();
             for (String word : words) {
-                wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+                int length = word.length();
+                lengthCount.put(length, lengthCount.getOrDefault(length, 0) + 1);
             }
             
-            String mostCommonWord = Collections.max(wordCount.entrySet(), Map.Entry.comparingByValue()).getKey();
-            System.out.println("The most common word is: " + mostCommonWord);
+            int mostCommonLength = Collections.max(lengthCount.entrySet(), Map.Entry.comparingByValue()).getKey();
+            System.out.println("The most common word length is: " + mostCommonLength);
         } catch (IOException e) {
             e.printStackTrace();
         }

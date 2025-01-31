@@ -1,4 +1,4 @@
-package org.mulamu;
+package org.mulamu.Module1;
 
 public class TwoKeyBruteForceDecryption {
     public static void main(String[] args) {
