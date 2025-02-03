@@ -1,10 +1,8 @@
-package org.mulamu.Module3;
+package org.mulamu.Module3.other;
 
 import java.io.*;
 import java.util.*;
 
-import java.io.*;
-import java.util.*;
 import java.util.regex.*;
 
 public class MostSpeakingCharacter {

@@ -29,7 +29,7 @@ public class CharactersInPlay {
         characters.clear();
         counts.clear();
 
-        String fileName = "src/main/java/org/mulamu/assesment2/errors.txt";
+        String fileName = "src/main/java/org/mulamu/Module2/assesment2/errors.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;

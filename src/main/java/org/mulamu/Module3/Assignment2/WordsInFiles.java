@@ -58,7 +58,7 @@ public class WordsInFiles {
 
     public void printFilesContainingWord(String word) {
         if (wordMap.containsKey(word)) {
-            System.out.println("The word '" + word + "' appears in files: " + wordMap.get(word));
+            System.out.println("The word '" + word + "' appears in files: " + String.join(", ", wordMap.get(word)));
         } else {
             System.out.println("The word '" + word + "' does not appear in any file.");
         }
@@ -74,7 +74,11 @@ public class WordsInFiles {
             allFiles.removeAll(wordMap.get(word));
         }
 
-        System.out.println("The word '" + word + "' does NOT appear in files: " + allFiles);
+        if (allFiles.isEmpty()) {
+            System.out.println("All files contain the word '" + word + "'.");
+        } else {
+            System.out.println("The word '" + word + "' does NOT appear in files: " + String.join(", ", allFiles));
+        }
     }
 
     public void tester() throws IOException {
@@ -86,11 +90,7 @@ public class WordsInFiles {
 
         System.out.println("Number of unique words in map: " + wordMap.size());
 
-        int number = 0;
-
-        System.out.println(countTotalWords());
-
-      //TODO create a function to retreave total number of words
+        System.out.println("Total number of words: " + countTotalWords());
 
         printFilesContainingWord("tree");
         printFilesNotContainingWord("sea");
@@ -98,7 +98,7 @@ public class WordsInFiles {
 
     private int countTotalWords() {
         int totalWords = 0;
-        for (HashSet<String> count : wordMap.values()) {
+        for (String key : wordMap.keySet()) {
             totalWords++;
         }
         return totalWords;
