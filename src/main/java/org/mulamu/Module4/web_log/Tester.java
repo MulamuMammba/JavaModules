@@ -31,13 +31,30 @@ public class Tester
         int num = 400;
         logAnalyzer.printAllHigherThanNum(num);
 
-        int low = 200;
-        int high = 299;
+        int low = 300;
+        int high = 399;
 
         System.out.println("Number of unique IP address between "+ low+ " and " + high + " is " + logAnalyzer.countUniqueIPsInRange(low,high));
 
         String date = "Mar 24";
         System.out.println("Number of unique IP address visits on " + date + " is " + logAnalyzer.uniqueIPVisitsOnDay(date).size());
+
+        System.out.println("Number of visits per IP Address: - ");
+        HashMap<String, Integer> map = logAnalyzer.countVisitsPerIP();
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
+        System.out.println("Most number of visits : ");
+        System.out.println(logAnalyzer.mostNumberVisitsByIP(map));
+
+        System.out.println("IP Addresses with most visits - \n" + logAnalyzer.iPsMostVisits(map));
+
+        HashMap<String, ArrayList<String>> hm = logAnalyzer.iPsForDays();
+        System.out.println("Day with the most IP Visit: "+logAnalyzer.dayWithMostIPVisits(hm));
+
+        String day = "Mar 17";
+        System.out.println("IP with the most visits on " + day + " is "+ logAnalyzer.iPsWithMostVisitsOnDay(hm,day));
 
     }
 
