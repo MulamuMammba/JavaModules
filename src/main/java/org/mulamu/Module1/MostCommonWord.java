@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MostCommonWord {
     public static void main(String[] args) {
-        String fileName = "romeo.txt";
+        String fileName = "src/main/java/org/mulamu/Module1/likeit.txt";
         try {
             String content = new String(Files.readAllBytes(Paths.get(fileName)));
             String cleanedContent = content.replaceAll("[.,!?;:]", "").toLowerCase();

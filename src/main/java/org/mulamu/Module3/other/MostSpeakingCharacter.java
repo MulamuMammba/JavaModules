@@ -7,7 +7,7 @@ import java.util.regex.*;
 
 public class MostSpeakingCharacter {
     public static void main(String[] args) {
-        String filename = "src/main/java/org/mulamu/Module3/likeit.txt";
+        String filename = "src/main/java/org/mulamu/Module3/other/likeit.txt";
         Map<String, Integer> characterCounts = new HashMap<>();
         Pattern pattern = Pattern.compile("^([A-Z]+)\\.\\s"); // Capturing the character's name
 

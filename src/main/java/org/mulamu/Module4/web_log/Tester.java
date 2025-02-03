@@ -32,11 +32,11 @@ public class Tester
         logAnalyzer.printAllHigherThanNum(num);
 
         int low = 200;
-        int high = 450;
+        int high = 299;
 
         System.out.println("Number of unique IP address between "+ low+ " and " + high + " is " + logAnalyzer.countUniqueIPsInRange(low,high));
 
-        String date = "Sep 14";
+        String date = "Mar 24";
         System.out.println("Number of unique IP address visits on " + date + " is " + logAnalyzer.uniqueIPVisitsOnDay(date).size());
 
     }

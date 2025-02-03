@@ -88,30 +88,23 @@ public class LogAnalyzer
 
 
 
-    public int countUniqueIPsInRange(int low, int high){
-         ArrayList<LogEntry> withinRange = new ArrayList<LogEntry>();
-         ArrayList<String> uniqueIPs = new ArrayList<String>();
-         for (LogEntry le : records){
-            if (le.getStatusCode()>=low && le.getStatusCode()<=high){
-                withinRange.add(le);
+    public int countUniqueIPsInRange(int low, int high) {
+        ArrayList<String> uniqueIPs = new ArrayList<String>();
+
+        for (LogEntry le : records) {
+            if (le.getStatusCode() >= low && le.getStatusCode() <= high) {
+                String ipAddr = le.getIpAddress();
+                if (!uniqueIPs.contains(ipAddr)) {
+                    uniqueIPs.add(ipAddr);
+                }
             }
-         }
-         for (LogEntry le :withinRange){
+        }
 
-             for (LogEntry rec : records){
-                 String ipAddr = rec.getIpAddress();
+        return uniqueIPs.size();
+    }
 
-                 if (!uniqueIPs.contains(ipAddr)){
-                     uniqueIPs.add(ipAddr);
-                 }
-             }
-         }
 
-         return uniqueIPs.size();
-
-     }
-
-     private List<Integer> uniqueCodes(ArrayList<Integer> list){
+    private List<Integer> uniqueCodes(ArrayList<Integer> list){
          ArrayList<Integer> uc = new ArrayList<>();
 
          for(int i: list){
