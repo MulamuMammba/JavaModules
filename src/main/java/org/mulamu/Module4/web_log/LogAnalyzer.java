@@ -20,7 +20,6 @@ public class LogAnalyzer
         
      public void readFile(String filename) {
          // complete method
-
              FileResource resource = new FileResource(filename);
              for(String line : resource.lines()){
                  records.add(WebLogParser.parseEntry(line));
