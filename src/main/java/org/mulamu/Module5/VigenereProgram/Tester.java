@@ -8,10 +8,8 @@ public class Tester {
     }
 
     private static void Test() {
-    VigenereBreaker breaker = new VigenereBreaker();
+        VigenereBreaker breaker = new VigenereBreaker();
         breaker.breakVigenere();
-    String out =
-"";
     }
 
 
